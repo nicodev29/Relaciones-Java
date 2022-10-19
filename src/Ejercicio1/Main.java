@@ -31,6 +31,5 @@ public class Main {
             System.out.println("Edad del perro: " + personas.get(i).getPerro().getEdad());
             System.out.println("Tamaño del perro: " + personas.get(i).getPerro().getTamano());
         }
-
     }
 }
