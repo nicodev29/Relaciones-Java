@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
+
 public class Juego2 {
     private HashSet<Jugador2> jugadores2;
     private Revolver2 revolver2;

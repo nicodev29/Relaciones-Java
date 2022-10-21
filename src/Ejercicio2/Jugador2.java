@@ -27,6 +27,7 @@ public class Jugador2 {
     public boolean isVivo() {
         return vivo;
     }
+
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }

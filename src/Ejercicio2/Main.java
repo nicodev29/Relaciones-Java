@@ -10,7 +10,7 @@ public class Main {
         }
 
         System.out.println();
-        System.out.println("El ''juego'' se finalizado...");
+        System.out.println("El ''juego'' ha finalizado...");
     }
 }
 
