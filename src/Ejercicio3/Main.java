@@ -28,5 +28,7 @@ public class Main {
         System.out.println("Cantidad de cartas disponibles: " + baraja.cartasDisponibles());
         baraja.cartasMonton();
         baraja.mostrarCartas();
+
+
     }
 }
