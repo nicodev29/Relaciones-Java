@@ -16,39 +16,30 @@ public class Cine {
     //metodo para mostrar el estado de los asientos
     public void mostrarAsientos() {
         for (int i = 0; i < asientos.length; i++) {
-            for (int j = 0; j < asientos[i].length; j++) {
+            for (int j = 0; j < asientos[j].length; j++) {
                 if (asientos[i][j] == true) {
                     System.out.print("X ");
                 } else {
                     System.out.print("O ");
                 }
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 
+
+    //getters y setters
     public void setAsiento(int fila, int columna, boolean b) {
         this.asientos[fila][columna] = true;
     }
-
-    //getters y setters
     public Peliculas getPelicula() {
         return pelicula;
-    }
-    public void setPelicula(Peliculas pelicula) {
-        this.pelicula = pelicula;
     }
     public int getPrecio() {
         return precio;
     }
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
     public boolean[][] getAsientos() {
         return asientos;
-    }
-    public void setAsientos(boolean[][] asientos) {
-        this.asientos = asientos;
     }
 
 }

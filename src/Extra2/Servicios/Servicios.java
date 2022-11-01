@@ -7,19 +7,34 @@ public class Servicios {
     public static Scanner leer = new Scanner (System.in);
 
 
-    public static Espectador crearEspectadorRandom(int minimo, int maximo) {
-        String nombre = "Espectador " + aleatorio(1, minimo * maximo);
-        return new Espectador(nombre, aleatorio(1, 100), aleatorio(100, 4000));
-    }
+
+    //metodo aleatorio para utilizar en metodos
+    // crearEspectador, para ubicar cuando el asiento esta ocupado,
+    // precioEntrada, y la pelicula que se mostrada
+    //cada vez que llamemos al metodo, tenemos que pasarle por parametro el min y el max, de lo que queremos que sea aleatorio
 
     public static int aleatorio(int min, int max) {
         return (int) (Math.random() * ((max - min) + 1)) + min;
     }
 
+
+
+
+
+    //creando espectadores random
+    public static Espectador crearEspectadorRandom(int minimo, int maximo) {
+        String nombre = "Espectador " + aleatorio(1, minimo * maximo);
+        return new Espectador(nombre, aleatorio(1, 100), aleatorio(100, 4000));
+    }
+
+
+
+
+
     //agregar espectadores teniendo en cuenta
-    // 1- edad minma
-    // 2- dinero minimo
-    // 3- que el asiento no este ocupado, en ese caso ubicarlo nuevamente
+    // 1- edad minma  get edad minima
+    // 2- dinero minimo get dinero
+    // 3- que el asiento no este ocupado, en ese caso ubicarlo nuevamente - get asientos
 
     public static void agregarEspectadoresRandom(Cine sala, int cantidad_personas) {
         Espectador espectador;
@@ -56,6 +71,9 @@ public class Servicios {
         }
     }
 
+
+
+
     //contabilizar la cantidad de espectadores que no pudieron ingresar
     public static int EspectadoresNoPudieronIngresar(Cine sala) {
         int cantidad = 0;
@@ -69,6 +87,8 @@ public class Servicios {
         return cantidad;
     }
 
+
+
     //contabilizar la cantidad de espectadores que pudieron ingresar
     public static int EspectadoresPudieronIngresar(Cine sala) {
         int cantidad = 0;
@@ -81,5 +101,4 @@ public class Servicios {
         }
         return cantidad;
     }
-
 }

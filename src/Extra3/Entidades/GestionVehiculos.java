@@ -69,7 +69,7 @@ public class GestionVehiculos {
         int numero_chasis = Utilidades.ingresarInt(MenuVehiculos.INGRESENUMEROCHASIS.toString());
         int posicion = verificarVehiculo(numero_motor, numero_chasis);
         if (posicion == -1) {
-            System.out.println("El vehiculo no existe");
+            System.out.println("Los datos ingresados no coinciden con ningun vehiculo");
             Utilidades.presionarEnter();
         } else {
             Vehiculo vehiculo = database.getVehiculos().get(posicion);
@@ -88,6 +88,6 @@ public class GestionVehiculos {
         int numero_chasis = Utilidades.ingresarInt(MenuVehiculos.INGRESENUMEROCHASIS.toString());
         if (!database.getVehiculos()
                 .removeIf(x -> (x.getNumero_motor() == numero_motor && x.getNumero_chasis() == numero_chasis)))
-            System.out.println("El cliente no existe");
+            System.out.println("Los datos ingresados no coinciden con ningun vehiculo");
     }
 }

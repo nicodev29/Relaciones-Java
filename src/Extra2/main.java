@@ -31,20 +31,25 @@ import Extra2.Entidades.Cine;
 import Extra2.Entidades.Peliculas;
 import Extra2.Servicios.Servicios;
 
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
+
+        final Scanner leer = new Scanner(System.in);
         System.out.println();
         System.out.println("Ejercicio cine");
         System.out.println();
 
             final int FILAS = 8;
             final int COLUMNAS = 6;
-            final int PRECIO = Servicios.aleatorio(500, 2000);
+            final int PRECIO_ENTRADA = Servicios.aleatorio(500, 1500);
             final Peliculas PELICULA = Peliculas.values()[Servicios.aleatorio(0, Peliculas.values().length)];
-            final int CANTIDAD_DE_PERSONAS = 25;
+            System.out.println("Cuantas personas ingresan al cine?");
+            final int CANTIDAD_DE_PERSONAS = leer.nextInt();
+            leer.close();
 
-            Cine sala = new Cine(PELICULA, PRECIO, FILAS, COLUMNAS);
-
+            Cine sala = new Cine(PELICULA, PRECIO_ENTRADA, FILAS, COLUMNAS);
             Servicios.agregarEspectadoresRandom(sala, CANTIDAD_DE_PERSONAS);
 
             System.out.println();
@@ -56,10 +61,8 @@ public class main {
 
             System.out.println();
             System.out.println("El precio de la entrada es: $" + sala.getPrecio());
-            System.out.println("Personas que pudieron ingresar: ");
-            System.out.println(Servicios.EspectadoresPudieronIngresar(sala));
-            System.out.println("Personas que no pudieron ingresar: ");
-            System.out.println(Servicios.EspectadoresNoPudieronIngresar(sala));
+            System.out.println("Personas que pudieron ingresar: " + Servicios.EspectadoresPudieronIngresar(sala));
+            System.out.println("Butacas sin ocupar: " + Servicios.EspectadoresNoPudieronIngresar(sala));
 
 
         }
