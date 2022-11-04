@@ -29,8 +29,5 @@ public class Main {
         baraja.cartasMonton();
         baraja.mostrarCartas();
 
-        //actualizando el repo desde mac a git
-
-
     }
 }
